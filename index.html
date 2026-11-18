@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="CADICO, taller de carpintería de Nicholas Carter en Los Cabos: puertas, closets, cocinas y muebles a medida.">
+<meta property="og:title" content="CADICO · Taller de carpintería en Los Cabos">
+<meta property="og:description" content="Puertas, closets, cocinas y muebles a medida, dibujados, construidos e instalados por Nicholas Carter.">
+<meta property="og:image" content="https://guaderrama.github.io/cadico/img/vista-previa.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/logo.png">
+<title>CADICO Carpintería</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Architects+Daughter&display=swap">
+<style>
+/* Layout: sitio de un taller, una sola columna editorial de 1312px; portada con la palabra "cadico" gigante y el banco recortado encima; bandas espresso para lo técnico. Un solo tema claro, a propósito: es la identidad del cliente. */
+:root{
+  --bg:#F2EEE8; --surface:#E9E3DA; --espresso:#2A201A; --choco:#4A3628;
+  --caramel:#9A6B43; --accent:#7A5232; --accent-light:#E2C29E; --greige:#8A7F71;
+  --ink:#211A15; --ink-2:#5C5249; --ink-3:#3B312A; --line:#D5CCBF; --line-2:#CFC5B7;
+  --on-dark:#F2EEE8; --on-dark-2:#DCD1C3; --on-dark-3:#CDBFAE; --on-choco:#E6DCCF; --pale-word:#E2D9CC;
+  --sans:'Outfit', 'Helvetica Neue', Arial, sans-serif;
+  --serif:'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+  --hand:'Architects Daughter', 'Bradley Hand', 'Comic Sans MS', cursive;
+  --gutter:clamp(16px, 4.5vw, 64px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;overflow-x:hidden}
+img{max-width:100%}
+a{color:var(--ink)}a:hover{color:var(--accent)}
+.oscuro a{color:var(--on-dark)}.oscuro a:hover{color:var(--accent-light)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.oscuro a:focus-visible,.oscuro button:focus-visible{outline-color:var(--accent-light)}
+h1,h2,h3{text-wrap:balance}
+.wrap{max-width:1312px;margin:0 auto;padding-left:max(var(--gutter), env(safe-area-inset-left, 0px));padding-right:max(var(--gutter), env(safe-area-inset-right, 0px))}
+.sec{padding-block:clamp(96px, 10vw, 140px) 0}
+.foto{filter:saturate(.86) contrast(1.04)}
+.head-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:16px 48px}
+.h2-duo{margin:0;font-size:clamp(34px, 3.8vw, 54px);line-height:1.08;font-weight:500;letter-spacing:-.02em}
+.h2-duo .suave{color:var(--greige)}
+.num{font-size:clamp(22px, 2vw, 28px);font-weight:500;color:var(--greige)}
+.etiqueta{font-size:15px;font-weight:500;color:var(--accent)}
+.oscuro .etiqueta{color:var(--accent-light)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 30px;border-radius:999px;text-decoration:none;font-size:15.5px;font-weight:500;border:1px solid transparent}
+.btn-oscuro{background:var(--espresso);color:var(--on-dark)}.btn-oscuro:hover{color:var(--accent-light)}
+.btn-borde{border-color:var(--ink);color:var(--ink)}
+.btn-claro{background:var(--accent-light);color:var(--ink);min-height:58px;font-size:17px;font-weight:600}.btn-claro:hover{color:var(--ink);background:#EBD2B3}
+.nota{font-family:var(--hand);color:var(--accent)}
+
+/* Encabezado */
+.top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 32px;padding-block:22px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none}
+.marca img{width:44px;height:44px;mix-blend-mode:multiply}
+.marca span{font-size:22px;font-weight:600;letter-spacing:-.02em}
+.menu{display:flex;flex-wrap:wrap;justify-content:center;gap:0 34px}
+.menu a{padding:12px 0;text-decoration:none;font-size:15px}
+.acciones{display:flex;align-items:center;gap:10px}
+.idioma{display:flex;padding:3px;border:1px solid var(--line-2);border-radius:999px}
+.idioma button{min-width:44px;min-height:38px;border:0;border-radius:999px;background:transparent;color:var(--ink);font:600 13px var(--sans);cursor:pointer}
+.idioma button[aria-pressed="true"]{background:var(--espresso);color:var(--on-dark)}
+.acciones .btn{min-height:46px;padding:0 22px;font-size:15px}
+
+/* Portada */
+.hero{background-image:url(dib/plano-cafe.svg);background-size:1500px auto;background-repeat:no-repeat;background-position:left -760px top 150px}
+.hero .wrap{position:relative;padding-block:4px clamp(72px, 9vw, 132px)}
+.palabra{margin:0;text-align:center;font-size:clamp(96px, 21.5vw, 314px);line-height:.82;font-weight:500;letter-spacing:-.055em}
+.sub{margin:12px 1.5% 0 0;text-align:right;font-size:clamp(16px, 1.7vw, 24px)}
+.banco-hero{position:absolute;left:50%;top:clamp(84px, 12.4vw, 180px);width:clamp(200px, 23vw, 336px);transform:translateX(-50%);z-index:2}
+.banco-hero img{width:100%;display:block;filter:drop-shadow(0 36px 28px rgba(42,32,26,.3));animation:subir 1.1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes subir{from{transform:translateY(26px)}to{transform:none}}
+.banco-nota{position:absolute;left:92%;top:10%;display:flex;align-items:flex-start;gap:4px;white-space:nowrap;font-size:16px}
+.cota{position:absolute;left:6%;right:6%;bottom:-30px;height:12px;border-left:1px solid var(--accent);border-right:1px solid var(--accent);background:linear-gradient(var(--accent), var(--accent)) center / 100% 1px no-repeat}
+.cota-txt{position:absolute;left:0;right:0;bottom:-58px;text-align:center;font-size:15px}
+.hero-fila{position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;margin-top:clamp(32px, 9vw, 130px)}
+.hero-texto{flex:0 1 330px;display:flex;flex-direction:column;gap:22px}
+.hero-texto p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-3)}
+.hero-texto .btn{align-self:flex-start}
+.tarjetas{flex:0 1 330px;display:flex;gap:14px}
+.tarjeta{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:10px;padding:8px 8px 14px;border-radius:22px;background:var(--espresso);color:var(--on-dark);text-decoration:none;transition:transform .25s ease}
+.tarjeta:hover{color:var(--accent-light);transform:translateY(-3px)}
+.tarjeta img,.tarjeta .papel{width:100%;aspect-ratio:1/.82;object-fit:cover;border-radius:15px;display:block}
+.tarjeta .papel{background:var(--bg);display:flex;align-items:center;justify-content:center}
+.tarjeta .papel img{width:92%;aspect-ratio:auto;border-radius:0}
+.tarjeta span{padding:0 8px;font-size:14.5px;font-weight:500}
+@media (max-width:860px){
+  .banco-hero{position:relative;left:auto;top:auto;transform:none;width:62%;margin:-12% auto 64px}
+  .banco-nota{left:auto;right:-6%;top:-6%}
+}
+@media (prefers-reduced-motion:reduce){.banco-hero img{animation:none}.tarjeta{transition:none}}
+
+/* Nosotros */
+.dos{display:flex;flex-wrap:wrap;gap:28px}
+.dos > div{flex:1 1 420px;min-width:0}
+.col{display:flex;flex-direction:column;gap:26px}
+.redondo{width:100%;object-fit:cover;border-radius:28px;display:block}
+.parrafo{margin:0;max-width:540px;font-size:16.5px;color:var(--ink-3)}
+.pastilla{position:absolute;left:22px;bottom:22px;padding:6px 14px;border-radius:999px;background:var(--bg);font-family:var(--hand);font-size:15px;color:var(--ink)}
+.enlace{align-self:flex-start;padding:8px 0;text-decoration:none;font-size:16px;font-weight:500;color:var(--accent)}
+
+/* Servicios */
+.indice{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.indice li{display:flex;flex-wrap:wrap;align-items:center;gap:16px 40px;padding-block:26px;border-bottom:1px solid var(--line)}
+.indice .n{flex:0 0 48px;font-size:15px;font-weight:500;color:var(--accent)}
+.indice h3{flex:1 1 260px;margin:0;font-family:var(--serif);font-size:clamp(36px, 3.6vw, 52px);line-height:1;font-weight:500}
+.indice p{flex:1 1 280px;max-width:400px;margin:0;font-size:16px;color:var(--ink-2)}
+.indice .mini{flex:0 0 auto;width:150px;height:104px;object-fit:cover;border-radius:14px;display:block}
+.indice .mini-fondo{flex:0 0 auto;width:150px;height:104px;border-radius:14px;background:var(--surface);display:flex;align-items:center;justify-content:center}
+.indice .mini-fondo img{width:84%;height:88%;object-fit:contain}
+
+/* Boceto */
+.banda{background-color:var(--espresso);color:var(--on-dark);background-image:url(dib/plano-crema.svg);background-size:1500px auto;background-repeat:no-repeat;background-position:left -640px bottom -240px;margin-top:clamp(96px, 10vw, 140px)}
+.banda .wrap{padding-block:clamp(88px, 9vw, 128px);display:flex;flex-wrap:wrap;align-items:center;gap:64px}
+.serif-caps{margin:0;font-family:var(--serif);font-size:clamp(46px, 5.2vw, 78px);line-height:.98;font-weight:500;letter-spacing:.02em;text-transform:uppercase}
+.serif-caps em{font-style:italic;text-transform:none;letter-spacing:0;color:var(--accent-light)}
+.claro-2{color:var(--on-dark-2)}
+.pista{margin:0;display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--on-dark-3)}
+.lamina{margin:12px 0 0;padding:14px;border-radius:24px;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;gap:12px}
+.lamina-fila{display:flex;flex-wrap:wrap;gap:14px;align-items:stretch}
+.lamina-foto{flex:0 1 34%;min-width:120px;aspect-ratio:3/4;object-fit:cover;border-radius:14px;display:block}
+.lamina-dib{flex:1 1 220px;min-width:0;position:relative;padding-bottom:26px}
+.lamina-dib img{width:100%;display:block}
+.lamina-dib span{position:absolute;bottom:0;font-family:var(--hand);font-size:15px;color:#3B2A1F}
+.lamina figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px;padding:10px 6px 2px;border-top:1px solid var(--line)}
+.wipe{--cut:52%;position:relative;aspect-ratio:3/4;max-width:100%;overflow:hidden;border-radius:28px;user-select:none;background-color:#F4F0E9;background-image:linear-gradient(rgba(59,42,31,.06) 1px, transparent 1px),linear-gradient(90deg, rgba(59,42,31,.06) 1px, transparent 1px);background-size:36px 36px}
+.wipe .capa{position:absolute;inset:0;width:100%;height:100%}
+.wipe .final{object-fit:cover;clip-path:inset(0 0 0 var(--cut))}
+.wipe .lbl{position:absolute;font-family:var(--hand);font-size:17px;line-height:1.15;color:#3B2A1F}
+.wipe .lbl-s{font-size:15px;color:var(--ink-2)}
+.wipe .chip-capa{position:absolute;bottom:16px;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500}
+.wipe input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:3}
+.perilla{position:absolute;top:0;bottom:0;left:var(--cut);width:0;pointer-events:none;z-index:2}
+.perilla::before{content:"";position:absolute;top:0;bottom:0;left:-1px;width:2px;background:var(--on-dark);box-shadow:0 0 0 1px rgba(42,32,26,.35)}
+.perilla .boton{position:absolute;top:50%;left:-27px;width:54px;height:54px;margin-top:-27px;border-radius:50%;background:var(--bg);color:var(--espresso);box-shadow:0 8px 24px rgba(42,32,26,.3);display:flex;align-items:center;justify-content:center}
+.wipe input:focus-visible ~ .perilla .boton{outline:2px solid var(--accent-light);outline-offset:3px}
+.pie-fig{margin:0;display:flex;justify-content:space-between;gap:16px;font-size:13.5px;color:var(--on-dark-3)}
+
+/* Proyectos */
+.obra{display:flex;flex-direction:column;gap:16px}
+.obra-pie{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.obra h3{margin:0;font-family:var(--serif);font-size:27px;line-height:1.1;font-weight:500}
+.obra .grande{font-size:32px}
+.obra p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.tag{flex:0 0 auto;padding:4px 12px;border:1px solid var(--line-2);border-radius:999px;font-size:12.5px;color:var(--ink-2)}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:28px}
+
+/* Materia */
+.materia{background:var(--surface);margin-top:clamp(96px, 10vw, 140px)}
+.materia .wrap{padding-block:clamp(80px, 8vw, 112px);display:flex;flex-wrap:wrap;align-items:flex-end;gap:56px}
+.muestras{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:14px}
+.muestras li{flex:1 1 72px;min-width:64px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.muestras img{width:100%;aspect-ratio:1/2.6;object-fit:cover;border-radius:999px;display:block}
+.muestras span{font-size:13.5px;font-weight:500;text-align:center;line-height:1.25}
+.barras{display:flex;gap:10px;height:12px}
+.barras span{border-radius:3px}
+
+/* Taller */
+.panel{display:flex;flex-wrap:wrap;border-radius:32px;overflow:hidden;background:var(--choco)}
+.panel-foto{flex:1 1 420px;min-width:0;min-height:560px;position:relative}
+.panel-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.panel-texto{flex:1 1 460px;min-width:0;padding:clamp(36px, 5vw, 72px);color:var(--on-dark);display:flex;flex-direction:column;gap:22px}
+.panel-texto p{margin:0;font-size:17px;color:var(--on-choco)}
+.cajas{display:flex;flex-wrap:wrap;gap:10px}
+.caja{flex:1 1 140px;padding:14px 16px;border-radius:14px;background:var(--bg);color:var(--ink);display:flex;flex-direction:column;gap:2px}
+.caja b{font-size:15px;font-weight:600}
+.caja span{font-size:13.5px;line-height:1.4;color:var(--ink-2)}
+.pendiente{display:flex;align-items:center;gap:16px;padding:16px 18px;border:1.5px dashed rgba(242,238,232,.55);border-radius:18px}
+
+/* Proceso */
+.pasos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));gap:28px}
+.pasos li{padding-top:22px;border-top:1px solid var(--ink);display:flex;flex-direction:column;gap:14px}
+.pasos .cab{display:flex;justify-content:space-between;align-items:flex-start}
+.pasos .cab span{font-family:var(--serif);font-size:60px;line-height:.9;color:var(--caramel)}
+.pasos img{width:52px;height:52px}
+.pasos h3{margin:0;font-size:21px;line-height:1.25;font-weight:500}
+.pasos p{margin:0;font-size:15.5px;color:var(--ink-2)}
+
+/* Instagram */
+.ig{display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:12px}
+.ig img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:20px;display:block}
+
+/* Cotizador */
+.cotizador{background-color:var(--espresso);color:var(--on-dark);border-radius:36px;padding:clamp(32px, 5.5vw, 84px);display:flex;flex-wrap:wrap;gap:56px;background-image:url(dib/plano-crema.svg);background-size:1500px auto;background-repeat:no-repeat;background-position:right -520px top -40px}
+fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+legend{padding:0;margin-bottom:12px;font-size:17px;font-weight:500}
+legend span{color:var(--accent-light)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:44px;padding:0 18px;border:1px solid rgba(242,238,232,.5);border-radius:999px;background:transparent;color:var(--on-dark);font:500 15px var(--sans);cursor:pointer}
+.chip:hover{border-color:var(--accent-light)}
+.chip[aria-pressed="true"]{background:var(--accent-light);border-color:var(--accent-light);color:var(--ink)}
+.recado{padding:26px 28px 30px;border-radius:22px;background-color:var(--bg);color:var(--ink);transform:rotate(-1.2deg);box-shadow:0 22px 44px rgba(0,0,0,.3);background-image:repeating-linear-gradient(transparent 0 31px, rgba(122,82,50,.18) 31px 32px);background-position:0 58px}
+.recado p{margin:14px 0 0;font-family:var(--hand);font-size:21px;line-height:32px}
+
+/* Pie */
+.pie{overflow:hidden}
+.pie-cols{display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px}
+.pie-cols a{padding:6px 0;font-size:16px}
+.pie-cols .lista{display:flex;flex-direction:column;gap:4px}
+.gigante{height:clamp(64px, 13.4vw, 196px);overflow:hidden;text-align:center;font-size:clamp(96px, 21.5vw, 314px);line-height:.8;font-weight:500;letter-spacing:-.055em;color:var(--pale-word);margin-top:28px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="top">
+<a class="marca" href="#inicio"><img src="img/logo.png" alt=""><span>cadico</span></a>
+<nav class="menu" data-aria="navLabel" aria-label="Navegación principal">
+<a href="#servicios" data-t="nav1">Servicios</a>
+<a href="#proyectos" data-t="nav2">Proyectos</a>
+<a href="#taller" data-t="nav3">Taller</a>
+<a href="#proceso" data-t="nav4">Proceso</a>
+<a href="#contacto" data-t="nav5">Contacto</a>
+</nav>
+<div class="acciones">
+<div class="idioma" role="group" aria-label="Idioma / Language">
+<button type="button" id="btn-es" aria-pressed="true" aria-label="Español">ES</button>
+<button type="button" id="btn-en" aria-pressed="false" aria-label="English">EN</button>
+</div>
+<a class="btn btn-oscuro" href="https://wa.me/526241549686" target="_blank" rel="noopener"><span data-t="ctaWa">Cotizar</span> <span aria-hidden="true">→</span></a>
+</div>
+</header>
+</div>
+
+<section id="inicio" class="hero">
+<div class="wrap">
+<h1 class="palabra">cadico</h1>
+<p class="sub" data-t="heroSub">taller de carpintería · los cabos</p>
+<div class="banco-hero">
+<img src="img/banco-recorte.png" data-alt="bancoAlt" alt="Banco de madera con asiento curvo, hecho por CADICO">
+<span class="banco-nota nota"><svg aria-hidden="true" width="34" height="26" viewBox="0 0 34 26" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M32 4C22 4 12 8 4 20M4 20l1-7M4 20l7-2"/></svg><span data-t="notaBanco">asiento curvo</span></span>
+<div class="cota" aria-hidden="true"></div>
+<span class="cota-txt nota" data-t="medidaBanco">hecho en el taller</span>
+</div>
+<div class="hero-fila">
+<div class="hero-texto">
+<p data-t="heroP">Puertas, closets, cocinas y muebles a medida, dibujados, construidos e instalados por Nicholas Carter.</p>
+<a class="btn btn-oscuro" href="#cotizar" data-t="heroB1">Cuéntanos tu proyecto</a>
+</div>
+<div class="tarjetas">
+<a class="tarjeta" href="#proyectos"><img class="foto" src="img/terraza.jpg" data-alt="card1Alt" alt="Terraza con jardineras de madera frente a los cerros"><span><span data-t="card1">Ver proyectos</span> →</span></a>
+<a class="tarjeta" href="#cotizar"><span class="papel"><img src="dib/boceto-banco.svg" alt=""></span><span><span data-t="card2">Cotizar a medida</span> →</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="nosotros">
+<div class="wrap" style="padding-block: clamp(40px, 5vw, 72px) 0; display: flex; flex-direction: column; gap: 44px">
+<div class="head-row">
+<h2 class="h2-duo"><span class="suave" data-t="aboutA">Carpintería hecha a mano,</span><br><span data-t="aboutB">para espacios que duran.</span></h2>
+<span class="num" data-t="n01">01 / Nosotros</span>
+</div>
+<div class="dos">
+<div><img class="redondo foto" src="img/puertas-laton.jpg" data-alt="aboutAlt1" alt="Puertas de madera oscura con jaladeras de latón" style="aspect-ratio: 5 / 6"></div>
+<div class="col">
+<div style="position: relative"><img class="redondo foto" src="img/escalera.jpg" data-alt="aboutAlt2" alt="Escalera de madera y acero bajo una palapa, con el mar al fondo" style="aspect-ratio: 16 / 10; object-position: center 62%"><span class="pastilla" data-t="notaMar">a unos pasos del mar</span></div>
+<p class="parrafo" data-t="aboutP1">CADICO es el taller de Nicholas Carter en Los Cabos. Cada pieza se mide en sitio, se dibuja antes de cortar y se construye para aguantar el sol y la sal de Baja.</p>
+<p class="parrafo" data-t="aboutP2">Trabajamos para casas, negocios y barcos: de una sola puerta a una cocina completa.</p>
+<a class="enlace" href="#taller"><span data-t="aboutLink">Conoce el taller</span> →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="servicios" class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 44px">
+<div class="head-row">
+<h2 class="h2-duo"><span class="suave" data-t="servA">Cinco oficios,</span><br><span data-t="servB">un mismo taller.</span></h2>
+<span class="num" data-t="n02">02 / Servicios</span>
+</div>
+<ul class="indice">
+<li><span class="n">01</span><h3 data-t="s1">Puertas</h3><p data-t="s1p">De interior, de entrada y con arco. Lisas, de tablero o rústicas.</p><img class="mini foto" src="img/puerta-rustica.jpg" data-alt="s1Alt" alt="Puerta doble rústica con clavos y herrajes de hierro"></li>
+<li><span class="n">02</span><h3 data-t="s2">Closets y vestidores</h3><p data-t="s2p">De piso a techo, con cajoneras y entrepaños a la medida.</p><img class="mini foto" src="img/closet.jpg" data-alt="s2Alt" alt="Closet de piso a techo con chapa de madera rojiza"></li>
+<li><span class="n">03</span><h3 data-t="s3">Cocinas y barras</h3><p data-t="s3p">Gabinetes, barras y coperos para casas y restaurantes.</p><img class="mini foto" src="img/cocina.jpg" data-alt="s3Alt" alt="Cocina con gabinetes de madera clara" style="object-position: 70% center"></li>
+<li><span class="n">04</span><h3 data-t="s4">Muebles a medida</h3><p data-t="s4p">Mesas, bancos, escritorios y vitrinas, pieza por pieza.</p><span class="mini-fondo"><img src="img/vitrina-recorte.png" data-alt="s4Alt" alt="Vitrina de madera para joyería con la tapa abierta"></span></li>
+<li><span class="n">05</span><h3 data-t="s5">Exteriores</h3><p data-t="s5p">Pérgolas, terrazas, jardineras y escaleras hechas para el sol de Baja.</p><img class="mini foto" src="img/pergola-cochera.jpg" data-alt="s5Alt" alt="Pérgola de madera sobre una cochera"></li>
+</ul>
+</div>
+</section>
+
+<section id="boceto" class="banda oscuro">
+<div class="wrap">
+<div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<span class="etiqueta" data-t="n03">03 / Del boceto a la pieza</span>
+<h2 class="serif-caps"><span data-t="bocA">Primero se dibuja.</span><br><em data-t="bocB">Después se corta.</em></h2>
+<p class="claro-2" style="margin: 0; max-width: 460px; font-size: 17.5px" data-t="bocP">Cada trabajo empieza en papel: medidas, proporciones y uniones. Así ves tu pieza antes de que entre al taller.</p>
+<p class="pista"><svg aria-hidden="true" width="28" height="16" viewBox="0 0 28 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3L2 8l5 5M21 3l5 5-5 5M2 8h24"/></svg><span data-t="bocHint">Desliza para comparar el boceto con la puerta terminada</span></p>
+<figure class="lamina">
+<div class="lamina-fila">
+<img class="lamina-foto foto" src="img/banco-frente.jpg" data-alt="bancoFotoAlt" alt="El mismo banco terminado, de frente">
+<div class="lamina-dib"><img src="dib/boceto-banco.svg" alt=""><span style="left: 6%" data-t="vFrontal">Vista frontal</span><span style="left: 58%" data-t="vLateral">Vista lateral</span></div>
+</div>
+<figcaption><span style="font-family: var(--serif); font-style: italic; font-size: 24px" data-t="bancoTitulo">Banco de asiento curvo</span><span style="font-size: 13px; color: var(--ink-2)" data-t="bancoCap">Del plano al taller</span></figcaption>
+</figure>
+</div>
+<div style="flex: 1 1 460px; min-width: 0; max-width: 600px; display: flex; flex-direction: column; gap: 14px">
+<div class="wipe" id="wipe">
+<img class="capa" src="dib/boceto-puerta.svg" alt="">
+<span class="lbl" style="left: 9%; top: 13.5%" data-t="marco">Marco</span>
+<span class="lbl" style="left: 9%; top: 38.5%; max-width: 19%" data-t="duela">Duela horizontal</span>
+<span class="lbl" style="left: 80%; top: 54.5%; max-width: 19%" data-t="manija">Manija</span>
+<span class="lbl lbl-s" style="left: 50%; top: 0.4%" data-t="ancho">ancho</span>
+<span class="lbl lbl-s" style="left: 0.6%; top: 46%; writing-mode: vertical-rl; transform: rotate(180deg)" data-t="alto">alto</span>
+<img class="capa final foto" src="img/puerta-duela.jpg" data-alt="puertaAlt" alt="Puerta de madera con duela horizontal, ya instalada">
+<span class="chip-capa" style="left: 16px; background: var(--espresso); color: var(--on-dark)" data-t="etqBoceto">Boceto</span>
+<span class="chip-capa" style="right: 16px; background: var(--bg); color: var(--ink)" data-t="etqTerminada">Terminada</span>
+<input type="range" id="comparador" min="0" max="100" step="1" value="52" data-aria="sliderLabel" aria-label="Comparar boceto y puerta terminada">
+<div class="perilla" aria-hidden="true"><span class="boton"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg></span></div>
+</div>
+<p class="pie-fig"><span data-t="fig02">Puerta de duela horizontal</span><span data-t="escala">Esc. 1:20</span></p>
+</div>
+</div>
+</section>
+
+<section id="proyectos" class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 44px">
+<div class="head-row">
+<h2 class="h2-duo"><span class="suave" data-t="proA">Trabajos recientes,</span><br><span data-t="proB">cada uno con nombre.</span></h2>
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 8px">
+<span class="num" data-t="n04">04 / Proyectos</span>
+<a class="enlace" href="https://www.instagram.com/cadico_mx/" target="_blank" rel="noopener"><span data-t="verTodos">Ver todos en Instagram</span> ↗</a>
+</div>
+</div>
+<div class="dos">
+<article class="obra" style="flex: 2 1 560px">
+<img class="redondo foto" src="img/terraza.jpg" data-alt="p1Alt" alt="Terraza con deck y jardineras de madera frente a los cerros" style="aspect-ratio: 5 / 4">
+<div class="obra-pie"><div><h3 class="grande" data-t="p1">Terraza con jardineras</h3><p data-t="p1d">Deck y jardineras con vista al cerro</p></div><span class="tag" data-t="p1t">Residencial</span></div>
+</article>
+<div style="flex: 1 1 340px; display: flex; flex-direction: column; gap: 28px">
+<article class="obra">
+<img class="redondo foto" src="img/barco.jpg" data-alt="p2Alt" alt="Interior de madera en la cubierta de un barco de pesca" style="aspect-ratio: 16 / 9; object-position: center 62%; border-radius: 24px">
+<div class="obra-pie"><div><h3 data-t="p2">Interior de barco</h3><p data-t="p2d">Picudo Sportfishing · Marina San Lucas</p></div><span class="tag" data-t="p2t">Náutico</span></div>
+</article>
+<article class="obra">
+<img class="redondo foto" src="img/barra.jpg" data-alt="p3Alt" alt="Barra de restaurante con frentes de listones y coperos de madera" style="aspect-ratio: 16 / 9; border-radius: 24px">
+<div class="obra-pie"><div><h3 data-t="p3">Barra, gabinetes y coperos</h3><p data-t="p3d">Omega Sport Bar &amp; Grill · detalles en rosa morada</p></div><span class="tag" data-t="p3t">Restaurante</span></div>
+</article>
+</div>
+</div>
+<div class="rejilla">
+<article class="obra">
+<img class="redondo foto" src="img/pergola-arcos.jpg" data-alt="p4Alt" alt="Pérgola de madera montada sobre arcos de piedra" style="aspect-ratio: 4 / 3; border-radius: 24px">
+<div class="obra-pie"><div><h3 data-t="p4">Pérgola entre arcos de piedra</h3><p data-t="p4d">Vigas de madera sobre columnas de piedra</p></div><span class="tag" data-t="p4t">Exterior</span></div>
+</article>
+<article class="obra">
+<img class="redondo foto" src="img/vitrina.jpg" data-alt="p5Alt" alt="Vitrina de madera para joyería con la tapa de vidrio abierta" style="aspect-ratio: 4 / 3; border-radius: 24px">
+<div class="obra-pie"><div><h3 data-t="p5">Vitrinas para joyería</h3><p data-t="p5d">Tapa de vidrio abatible y cajones</p></div><span class="tag" data-t="p5t">Comercial</span></div>
+</article>
+<article class="obra">
+<img class="redondo foto" src="img/sala-juntas.jpg" data-alt="p6Alt" alt="Sala de juntas con muro de listones iluminado y mesa de madera" style="aspect-ratio: 4 / 3; object-position: center 70%; border-radius: 24px">
+<div class="obra-pie"><div><h3 data-t="p6">Sala de juntas con lambrín</h3><p data-t="p6d">Lambrín iluminado y mesa de madera</p></div><span class="tag" data-t="p6t">Corporativo</span></div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="materia" class="materia">
+<div class="wrap">
+<div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span class="etiqueta" data-t="n05">05 / Materia</span>
+<h2 style="margin: 0; font-family: var(--serif); font-size: clamp(72px, 8vw, 128px); line-height: .88; font-weight: 500" data-t="acaH2">Madera</h2>
+<p style="margin: 0; font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.2; color: var(--ink-3)" data-t="acaSub">Tonos tomados de trabajos reales.</p>
+<p style="margin: 0; max-width: 440px; font-size: 16px; color: var(--ink-2)" data-t="acaP">Cada muestra es un acercamiento a una pieza que ya hicimos. Eliges viendo madera de verdad, no un catálogo impreso.</p>
+<p class="nota" style="margin: 0; font-size: 18px" data-t="acaRosa">También trabajamos rosa morada, una madera tropical mexicana.</p>
+</div>
+<div style="flex: 2 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<ul class="muestras">
+<li><img src="img/muestra-1.jpg" alt=""><span data-t="a1">Natural</span></li>
+<li><img src="img/muestra-2.jpg" alt=""><span data-t="a2">Tono nogal</span></li>
+<li><img src="img/muestra-3.jpg" alt=""><span data-t="a3">Rojizo</span></li>
+<li><img src="img/muestra-4.jpg" alt=""><span data-t="a4">Chocolate</span></li>
+<li><img src="img/muestra-5.jpg" alt=""><span data-t="a5">Negro</span></li>
+<li><img src="img/muestra-6.jpg" alt=""><span data-t="a6">Deslavado</span></li>
+<li><img src="img/muestra-7.jpg" alt=""><span data-t="a7">Rústico</span></li>
+</ul>
+<div class="barras" aria-hidden="true"><span style="flex: 3 1 0; background: var(--espresso)"></span><span style="flex: 4 1 0; background: var(--caramel)"></span><span style="flex: 2 1 0; background: var(--greige)"></span></div>
+</div>
+</div>
+</section>
+
+<section id="taller" class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 16px">
+<div class="panel">
+<div class="panel-foto"><img class="foto" src="img/arco-taller.jpg" data-alt="arcoAlt" alt="Arco de madera en proceso dentro del taller, con herramientas al fondo"></div>
+<div class="panel-texto oscuro">
+<span class="etiqueta" data-t="n06">06 / El taller</span>
+<h2 style="margin: 0; font-family: var(--serif); font-size: clamp(40px, 4.2vw, 60px); line-height: 1; font-weight: 500; letter-spacing: .06em; text-transform: uppercase" data-t="talH2">El taller</h2>
+<p data-t="talP1">Aquí se mide dos veces y se corta una. Nicholas Carter diseña cada pieza, la construye con su equipo y la instala en su lugar.</p>
+<p data-t="talP2">Una sola persona responde por tu proyecto de principio a fin.</p>
+<div class="cajas">
+<div class="caja"><b data-t="b1">Diseño</b><span data-t="b1p">Bocetos y planos a medida</span></div>
+<div class="caja"><b data-t="b2">Fabricación</b><span data-t="b2p">En nuestro propio taller</span></div>
+<div class="caja"><b data-t="b3">Instalación</b><span data-t="b3p">Cada pieza en su lugar</span></div>
+</div>
+<div class="pendiente">
+<svg aria-hidden="true" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E2C29E" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h3.5l2-3h7l2 3H21v11H3Z"/><circle cx="12" cy="13" r="4"/></svg>
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-family: var(--hand); font-size: 18px; line-height: 1.25" data-t="fotoPend">Foto pendiente: Nicholas trabajando en el taller</span><span style="font-size: 13px; color: var(--on-choco)" data-t="fotoPendNota">Sesión de fotos sugerida</span></div>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-size: 13.5px; color: var(--ink-2)" data-t="fig03">Un arco en proceso, dentro del taller de CADICO.</p>
+</div>
+</section>
+
+<section id="proceso" class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 44px">
+<div class="head-row">
+<h2 class="h2-duo"><span class="suave" data-t="procA">Cuatro pasos,</span><br><span data-t="procB">sin sorpresas.</span></h2>
+<span class="num" data-t="n07">07 / Proceso</span>
+</div>
+<ol class="pasos">
+<li><div class="cab"><span>01</span><img src="dib/icono-medir.svg" alt=""></div><h3 data-t="pr1">Platicamos y medimos</h3><p data-t="pr1p">Vemos el espacio, tomamos medidas y escuchamos lo que necesitas.</p></li>
+<li><div class="cab"><span>02</span><img src="dib/icono-boceto.svg" alt=""></div><h3 data-t="pr2">Boceto y cotización</h3><p data-t="pr2p">Te enviamos el dibujo con medidas, materiales y precio antes de cortar la primera tabla.</p></li>
+<li><div class="cab"><span>03</span><img src="dib/icono-taller.svg" alt=""></div><h3 data-t="pr3">Fabricación en taller</h3><p data-t="pr3p">Cortamos, ensamblamos y damos acabado a cada pieza en nuestro taller.</p></li>
+<li><div class="cab"><span>04</span><img src="dib/icono-instalar.svg" alt=""></div><h3 data-t="pr4">Instalación</h3><p data-t="pr4p">Llevamos cada pieza y la instalamos en su lugar.</p></li>
+</ol>
+</div>
+</section>
+
+<section class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 32px">
+<div class="head-row" style="align-items: flex-end">
+<h2 class="h2-duo"><span class="suave" data-t="igA">Lo más reciente,</span><br>@cadico_mx</h2>
+<a class="btn btn-borde" href="https://www.instagram.com/cadico_mx/" target="_blank" rel="noopener"><span data-t="igSeguir">Seguir en Instagram</span> ↗</a>
+</div>
+<div class="ig">
+<img class="foto" src="img/puertas-laton.jpg" data-alt="ig1" alt="Puertas oscuras con jaladeras de latón">
+<img class="foto" src="img/repisas.jpg" data-alt="ig2" alt="Repisas flotantes sobre muro de listones">
+<img class="foto" src="img/la-coyota.jpg" data-alt="ig3" alt="Tabla grabada con el logo de La Coyota">
+<img class="foto" src="img/tabla-maderas.jpg" data-alt="ig4" alt="Tabla de varias maderas">
+<img class="foto" src="img/tabla-playa.jpg" data-alt="ig5" alt="Pieza de madera sobre la arena, frente al mar">
+<img class="foto" src="img/librero.jpg" data-alt="ig6" alt="Librero y escritorio alrededor de una ventana">
+</div>
+</div>
+</section>
+
+<section id="cotizar" class="sec">
+<div class="wrap">
+<div class="cotizador oscuro">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span class="etiqueta" data-t="n08">08 / Cotiza</span>
+<h2 style="margin: 0; font-family: var(--serif); font-size: clamp(44px, 4.8vw, 72px); line-height: .98; font-weight: 500"><span data-t="cotA">Cuéntanos</span> <em style="font-style: italic; color: var(--accent-light)" data-t="cotB">tu proyecto.</em></h2>
+<p class="claro-2" style="margin: 0; max-width: 460px; font-size: 17px" data-t="cotP">Elige tres opciones y te dejamos el mensaje listo para WhatsApp.</p>
+</div>
+<fieldset><legend><span>1 · </span><span data-t="q1">¿Qué necesitas?</span></legend><div class="chips" id="chips-need"></div></fieldset>
+<fieldset><legend><span>2 · </span><span data-t="q2">¿Para dónde?</span></legend><div class="chips" id="chips-place"></div></fieldset>
+<fieldset><legend><span>3 · </span><span data-t="q3">¿Para cuándo?</span></legend><div class="chips" id="chips-when"></div></fieldset>
+</div>
+<div style="flex: 1 1 360px; min-width: 0; max-width: 480px; display: flex; flex-direction: column; gap: 22px">
+<div class="recado">
+<span style="font-size: 13px; font-weight: 500; color: var(--accent)" data-t="tuMensaje">Tu mensaje</span>
+<p id="mensaje">Hola Nicholas, me interesa una puerta para mi casa, en uno a tres meses. ¿Podemos platicar?</p>
+<p style="margin: 18px 0 0; font-family: var(--sans); font-size: 13px; line-height: 1.5; color: var(--ink-2)">→ WhatsApp · 624 154 9686</p>
+</div>
+<a class="btn btn-claro" id="enviar" href="https://wa.me/526241549686" target="_blank" rel="noopener"><span data-t="enviarWa">Enviar por WhatsApp</span> <span aria-hidden="true">→</span></a>
+<p class="claro-2" style="margin: 0; font-size: 15px"><span data-t="oEscribe">o escribe a</span> <span style="user-select: all">nc.1221@hotmail.com</span></p>
+<img src="dib/ensamble.svg" alt="" style="width: 100%; max-width: 420px; margin-top: 8px; display: block">
+</div>
+</div>
+</div>
+</section>
+
+<footer id="contacto" class="pie sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 36px">
+<div class="pie-cols">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; align-items: center; gap: 20px">
+<img src="img/logo.png" data-alt="logoAlt" alt="Logo de CADICO: colibrí de origami, Carpintería, Diseño y Construcción" style="width: 104px; height: 104px; mix-blend-mode: multiply">
+<p style="margin: 0; max-width: 260px; font-size: 16.5px; color: var(--ink-3)" data-t="pieTag">Carpintería, diseño y construcción. Hecho a mano en Los Cabos, B.C.S.</p>
+</div>
+<div class="lista" style="flex: 1 1 240px; min-width: 0">
+<span class="etiqueta" style="font-size: 14px; margin-bottom: 4px" data-t="contacto">Contacto</span>
+<span style="font-size: 18px; font-weight: 500">Nicholas Carter</span>
+<a href="https://wa.me/526241549686" target="_blank" rel="noopener">WhatsApp · 624 154 9686</a>
+<span style="padding: 6px 0; font-size: 16px; user-select: all">nc.1221@hotmail.com</span>
+<a href="https://www.instagram.com/cadico_mx/" target="_blank" rel="noopener">Instagram · @cadico_mx</a>
+</div>
+<nav class="lista" style="flex: 0 1 200px" data-aria="navPie" aria-label="Sitio">
+<span class="etiqueta" style="font-size: 14px; margin-bottom: 4px" data-t="navPie">Sitio</span>
+<a href="#servicios" style="text-decoration: none" data-t="nav1">Servicios</a>
+<a href="#proyectos" style="text-decoration: none" data-t="nav2">Proyectos</a>
+<a href="#taller" style="text-decoration: none" data-t="nav3">Taller</a>
+<a href="#cotizar" style="text-decoration: none" data-t="heroB1">Cuéntanos tu proyecto</a>
+</nav>
+</div>
+<p style="margin: 0; padding-top: 18px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 13.5px; color: var(--ink-2)"><span>© 2026 CADICO</span><span data-t="hecho">Los Cabos, Baja California Sur</span></p>
+</div>
+<div class="wrap"><div class="gigante" aria-hidden="true">cadico</div></div>
+</footer>
+
+<script>
+(function () {
+  var T = {
+    es: {
+      navLabel: "Navegación principal", nav1: "Servicios", nav2: "Proyectos", nav3: "Taller", nav4: "Proceso", nav5: "Contacto",
+      ctaWa: "Cotizar", heroSub: "taller de carpintería · los cabos",
+      heroP: "Puertas, closets, cocinas y muebles a medida, dibujados, construidos e instalados por Nicholas Carter.",
+      heroB1: "Cuéntanos tu proyecto", card1: "Ver proyectos", card1Alt: "Terraza con jardineras de madera frente a los cerros", card2: "Cotizar a medida",
+      bancoAlt: "Banco de madera con asiento curvo, hecho por CADICO", notaBanco: "asiento curvo", medidaBanco: "hecho en el taller",
+      n01: "01 / Nosotros", aboutA: "Carpintería hecha a mano,", aboutB: "para espacios que duran.",
+      aboutP1: "CADICO es el taller de Nicholas Carter en Los Cabos. Cada pieza se mide en sitio, se dibuja antes de cortar y se construye para aguantar el sol y la sal de Baja.",
+      aboutP2: "Trabajamos para casas, negocios y barcos: de una sola puerta a una cocina completa.",
+      aboutLink: "Conoce el taller", aboutAlt1: "Puertas de madera oscura con jaladeras de latón", aboutAlt2: "Escalera de madera y acero bajo una palapa, con el mar al fondo", notaMar: "a unos pasos del mar",
+      n02: "02 / Servicios", servA: "Cinco oficios,", servB: "un mismo taller.",
+      s1: "Puertas", s1p: "De interior, de entrada y con arco. Lisas, de tablero o rústicas.", s1Alt: "Puerta doble rústica con clavos y herrajes de hierro",
+      s2: "Closets y vestidores", s2p: "De piso a techo, con cajoneras y entrepaños a la medida.", s2Alt: "Closet de piso a techo con chapa de madera rojiza",
+      s3: "Cocinas y barras", s3p: "Gabinetes, barras y coperos para casas y restaurantes.", s3Alt: "Cocina con gabinetes de madera clara",
+      s4: "Muebles a medida", s4p: "Mesas, bancos, escritorios y vitrinas, pieza por pieza.", s4Alt: "Vitrina de madera para joyería con la tapa abierta",
+      s5: "Exteriores", s5p: "Pérgolas, terrazas, jardineras y escaleras hechas para el sol de Baja.", s5Alt: "Pérgola de madera sobre una cochera",
+      n03: "03 / Del boceto a la pieza", bocA: "Primero se dibuja.", bocB: "Después se corta.",
+      bocP: "Cada trabajo empieza en papel: medidas, proporciones y uniones. Así ves tu pieza antes de que entre al taller.",
+      bocHint: "Desliza para comparar el boceto con la puerta terminada", sliderLabel: "Comparar boceto y puerta terminada",
+      etqBoceto: "Boceto", etqTerminada: "Terminada", marco: "Marco", duela: "Duela horizontal", manija: "Manija", ancho: "ancho", alto: "alto",
+      puertaAlt: "Puerta de madera con duela horizontal, ya instalada", fig02: "Puerta de duela horizontal", escala: "Esc. 1:20",
+      bancoTitulo: "Banco de asiento curvo", bancoCap: "Del plano al taller", bancoFotoAlt: "El mismo banco terminado, de frente", vFrontal: "Vista frontal", vLateral: "Vista lateral",
+      n04: "04 / Proyectos", proA: "Trabajos recientes,", proB: "cada uno con nombre.", verTodos: "Ver todos en Instagram",
+      p1: "Terraza con jardineras", p1d: "Deck y jardineras con vista al cerro", p1t: "Residencial", p1Alt: "Terraza con deck y jardineras de madera frente a los cerros",
+      p2: "Interior de barco", p2d: "Picudo Sportfishing · Marina San Lucas", p2t: "Náutico", p2Alt: "Interior de madera en la cubierta de un barco de pesca",
+      p3: "Barra, gabinetes y coperos", p3d: "Omega Sport Bar & Grill · detalles en rosa morada", p3t: "Restaurante", p3Alt: "Barra de restaurante con frentes de listones y coperos de madera",
+      p4: "Pérgola entre arcos de piedra", p4d: "Vigas de madera sobre columnas de piedra", p4t: "Exterior", p4Alt: "Pérgola de madera montada sobre arcos de piedra",
+      p5: "Vitrinas para joyería", p5d: "Tapa de vidrio abatible y cajones", p5t: "Comercial", p5Alt: "Vitrina de madera para joyería con la tapa de vidrio abierta",
+      p6: "Sala de juntas con lambrín", p6d: "Lambrín iluminado y mesa de madera", p6t: "Corporativo", p6Alt: "Sala de juntas con muro de listones iluminado y mesa de madera",
+      n05: "05 / Materia", acaH2: "Madera", acaSub: "Tonos tomados de trabajos reales.",
+      acaP: "Cada muestra es un acercamiento a una pieza que ya hicimos. Eliges viendo madera de verdad, no un catálogo impreso.",
+      acaRosa: "También trabajamos rosa morada, una madera tropical mexicana.",
+      a1: "Natural", a2: "Tono nogal", a3: "Rojizo", a4: "Chocolate", a5: "Negro", a6: "Deslavado", a7: "Rústico",
+      n06: "06 / El taller", talH2: "El taller",
+      talP1: "Aquí se mide dos veces y se corta una. Nicholas Carter diseña cada pieza, la construye con su equipo y la instala en su lugar.",
+      talP2: "Una sola persona responde por tu proyecto de principio a fin.",
+      b1: "Diseño", b1p: "Bocetos y planos a medida", b2: "Fabricación", b2p: "En nuestro propio taller", b3: "Instalación", b3p: "Cada pieza en su lugar",
+      fotoPend: "Foto pendiente: Nicholas trabajando en el taller", fotoPendNota: "Sesión de fotos sugerida",
+      fig03: "Un arco en proceso, dentro del taller de CADICO.", arcoAlt: "Arco de madera en proceso dentro del taller, con herramientas al fondo",
+      n07: "07 / Proceso", procA: "Cuatro pasos,", procB: "sin sorpresas.",
+      pr1: "Platicamos y medimos", pr1p: "Vemos el espacio, tomamos medidas y escuchamos lo que necesitas.",
+      pr2: "Boceto y cotización", pr2p: "Te enviamos el dibujo con medidas, materiales y precio antes de cortar la primera tabla.",
+      pr3: "Fabricación en taller", pr3p: "Cortamos, ensamblamos y damos acabado a cada pieza en nuestro taller.",
+      pr4: "Instalación", pr4p: "Llevamos cada pieza y la instalamos en su lugar.",
+      igA: "Lo más reciente,", igSeguir: "Seguir en Instagram",
+      ig1: "Puertas oscuras con jaladeras de latón", ig2: "Repisas flotantes sobre muro de listones", ig3: "Tabla grabada con el logo de La Coyota",
+      ig4: "Tabla de varias maderas", ig5: "Pieza de madera sobre la arena, frente al mar", ig6: "Librero y escritorio alrededor de una ventana",
+      n08: "08 / Cotiza", cotA: "Cuéntanos", cotB: "tu proyecto.", cotP: "Elige tres opciones y te dejamos el mensaje listo para WhatsApp.",
+      q1: "¿Qué necesitas?", q2: "¿Para dónde?", q3: "¿Para cuándo?", tuMensaje: "Tu mensaje", enviarWa: "Enviar por WhatsApp", oEscribe: "o escribe a",
+      logoAlt: "Logo de CADICO: colibrí de origami, Carpintería, Diseño y Construcción",
+      pieTag: "Carpintería, diseño y construcción. Hecho a mano en Los Cabos, B.C.S.", contacto: "Contacto", navPie: "Sitio", hecho: "Los Cabos, Baja California Sur"
+    },
+    en: {
+      navLabel: "Main navigation", nav1: "Services", nav2: "Projects", nav3: "Workshop", nav4: "Process", nav5: "Contact",
+      ctaWa: "Get a quote", heroSub: "woodworking studio · los cabos",
+      heroP: "Custom doors, closets, kitchens and furniture, sketched, built and installed by Nicholas Carter.",
+      heroB1: "Tell us about your project", card1: "See projects", card1Alt: "Deck with wooden planters facing the hills", card2: "Custom quote",
+      bancoAlt: "Wooden stool with a curved seat, made by CADICO", notaBanco: "curved seat", medidaBanco: "made in our workshop",
+      n01: "01 / About", aboutA: "Woodwork made by hand,", aboutB: "for spaces built to last.",
+      aboutP1: "CADICO is Nicholas Carter's workshop in Los Cabos. Every piece is measured on site, sketched before cutting, and built to stand up to Baja's sun and salt air.",
+      aboutP2: "We work for homes, businesses and boats: from a single door to a full kitchen.",
+      aboutLink: "Meet the workshop", aboutAlt1: "Dark wood doors with brass pulls", aboutAlt2: "Wood and steel stair under a palapa roof, with the sea behind it", notaMar: "steps from the sea",
+      n02: "02 / Services", servA: "Five trades,", servB: "one workshop.",
+      s1: "Doors", s1p: "Interior, entry and arched. Flat, paneled or rustic.", s1Alt: "Rustic double door with iron studs and hardware",
+      s2: "Closets & dressing rooms", s2p: "Floor to ceiling, with drawers and shelves made to fit.", s2Alt: "Floor-to-ceiling closet in reddish wood veneer",
+      s3: "Kitchens & bars", s3p: "Cabinets, bars and glass racks for homes and restaurants.", s3Alt: "Kitchen with light wood cabinets",
+      s4: "Custom furniture", s4p: "Tables, stools, desks and display cases, piece by piece.", s4Alt: "Wooden jewelry display case with its lid open",
+      s5: "Outdoors", s5p: "Pergolas, decks, planters and stairs built for the Baja sun.", s5Alt: "Wood pergola over a carport",
+      n03: "03 / From sketch to piece", bocA: "We draw first.", bocB: "Then we cut.",
+      bocP: "Every job starts on paper: measurements, proportions and joinery. You see your piece before it reaches the workshop.",
+      bocHint: "Slide to compare the sketch with the finished door", sliderLabel: "Compare sketch and finished door",
+      etqBoceto: "Sketch", etqTerminada: "Finished", marco: "Frame", duela: "Horizontal boards", manija: "Lever", ancho: "width", alto: "height",
+      puertaAlt: "Installed wooden door with horizontal boards", fig02: "Horizontal-board door", escala: "Scale 1:20",
+      bancoTitulo: "Saddle-seat stool", bancoCap: "From plan to workshop", bancoFotoAlt: "The same stool, finished, seen from the front", vFrontal: "Front view", vLateral: "Side view",
+      n04: "04 / Projects", proA: "Recent work,", proB: "each with a name.", verTodos: "See them all on Instagram",
+      p1: "Deck with planters", p1d: "Wood deck and planters facing the hills", p1t: "Residential", p1Alt: "Rooftop deck with wooden planters facing the hills",
+      p2: "Boat interior", p2d: "Picudo Sportfishing · Marina San Lucas", p2t: "Marine", p2Alt: "Wood interior on the deck of a fishing boat",
+      p3: "Bar, cabinets and glass racks", p3d: "Omega Sport Bar & Grill · rosa morada details", p3t: "Restaurant", p3Alt: "Restaurant bar with slatted fronts and wooden glass racks",
+      p4: "Pergola between stone arches", p4d: "Wood beams over stone columns", p4t: "Outdoor", p4Alt: "Wood pergola set on stone arches",
+      p5: "Jewelry display cases", p5d: "Hinged glass lid and drawers", p5t: "Retail", p5Alt: "Wooden jewelry display case with its glass lid open",
+      p6: "Boardroom with slat wall", p6d: "Backlit slat wall and wood table", p6t: "Office", p6Alt: "Boardroom with a backlit slatted wall and a wood table",
+      n05: "05 / Materials", acaH2: "Wood", acaSub: "Tones taken from real projects.",
+      acaP: "Each swatch is a close-up of a piece we've already built. You choose by looking at real wood, not a printed catalog.",
+      acaRosa: "We also work with rosa morada, a Mexican tropical hardwood.",
+      a1: "Natural", a2: "Walnut tone", a3: "Reddish", a4: "Chocolate", a5: "Black", a6: "Whitewashed", a7: "Rustic",
+      n06: "06 / The workshop", talH2: "The workshop",
+      talP1: "Here we measure twice and cut once. Nicholas Carter designs every piece, builds it with the team and installs it in place.",
+      talP2: "One person answers for your project from start to finish.",
+      b1: "Design", b1p: "Custom sketches and plans", b2: "Build", b2p: "In our own workshop", b3: "Install", b3p: "Every piece in place",
+      fotoPend: "Photo to come: Nicholas at work in the workshop", fotoPendNota: "Suggested photo session",
+      fig03: "An arch in progress inside the CADICO workshop.", arcoAlt: "Wooden arch in progress inside the workshop, tools in the background",
+      n07: "07 / Process", procA: "Four steps,", procB: "no surprises.",
+      pr1: "We talk and measure", pr1p: "We see the space, take measurements and listen to what you need.",
+      pr2: "Sketch and quote", pr2p: "You get a drawing with measurements, materials and price before the first board is cut.",
+      pr3: "Built in our workshop", pr3p: "We cut, assemble and finish every piece in our own workshop.",
+      pr4: "Installation", pr4p: "We deliver every piece and fit it in place.",
+      igA: "Latest work,", igSeguir: "Follow on Instagram",
+      ig1: "Dark doors with brass pulls", ig2: "Floating shelves on a slatted wall", ig3: "Board engraved with the La Coyota logo",
+      ig4: "Multi-wood board", ig5: "Wooden piece on the sand by the sea", ig6: "Bookshelves and desk built around a window",
+      n08: "08 / Get a quote", cotA: "Tell us about", cotB: "your project.", cotP: "Pick three options and we'll have your WhatsApp message ready.",
+      q1: "What do you need?", q2: "Where is it going?", q3: "When do you need it?", tuMensaje: "Your message", enviarWa: "Send on WhatsApp", oEscribe: "or email",
+      logoAlt: "CADICO logo: origami hummingbird, Carpentry, Design and Build",
+      pieTag: "Carpentry, design and build. Handmade in Los Cabos, B.C.S.", contacto: "Contact", navPie: "Site", hecho: "Los Cabos, Baja California Sur"
+    }
+  };
+  var OPT = {
+    need: [
+      { id: "puerta", es: "Puerta", en: "Door", esMsg: "una puerta", enMsg: "a door" },
+      { id: "closet", es: "Closet", en: "Closet", esMsg: "un closet", enMsg: "a closet" },
+      { id: "cocina", es: "Cocina", en: "Kitchen", esMsg: "una cocina", enMsg: "a kitchen" },
+      { id: "barra", es: "Barra", en: "Bar", esMsg: "una barra", enMsg: "a bar" },
+      { id: "mueble", es: "Mueble", en: "Furniture", esMsg: "un mueble a medida", enMsg: "a custom piece of furniture" },
+      { id: "exterior", es: "Exterior", en: "Outdoor", esMsg: "un proyecto de exterior", enMsg: "an outdoor project" },
+      { id: "otro", es: "Otro", en: "Other", esMsg: "un proyecto de carpintería", enMsg: "a carpentry project" }
+    ],
+    place: [
+      { id: "casa", es: "Casa", en: "Home", esMsg: "mi casa", enMsg: "my home" },
+      { id: "negocio", es: "Negocio", en: "Business", esMsg: "mi negocio", enMsg: "my business" },
+      { id: "hotel", es: "Hotel o desarrollo", en: "Hotel or development", esMsg: "un hotel o desarrollo", enMsg: "a hotel or development" },
+      { id: "barco", es: "Barco", en: "Boat", esMsg: "un barco", enMsg: "a boat" }
+    ],
+    when: [
+      { id: "pronto", es: "Lo antes posible", en: "As soon as possible", esMsg: "lo antes posible", enMsg: "as soon as possible" },
+      { id: "meses", es: "En 1 a 3 meses", en: "In 1 to 3 months", esMsg: "en uno a tres meses", enMsg: "within one to three months" },
+      { id: "sinprisa", es: "Sin prisa", en: "No rush", esMsg: "sin prisa", enMsg: "with no rush" }
+    ]
+  };
+  var st = { lang: "es", need: "puerta", place: "casa", when: "meses" };
+  try { var guardado = localStorage.getItem("cadico-idioma"); if (guardado === "en" || guardado === "es") st.lang = guardado; } catch (e) {}
+
+  function frase(lista, id) { var o = lista.filter(function (x) { return x.id === id; })[0] || lista[0]; return o[st.lang + "Msg"]; }
+
+  function chips(key) {
+    var caja = document.getElementById("chips-" + key);
+    caja.textContent = "";
+    OPT[key].forEach(function (o) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.textContent = o[st.lang];
+      b.setAttribute("aria-pressed", st[key] === o.id ? "true" : "false");
+      b.addEventListener("click", function () { st[key] = o.id; pintar(); });
+      caja.appendChild(b);
+    });
+  }
+
+  function pintar() {
+    var t = T[st.lang];
+    document.documentElement.lang = st.lang;
+    document.querySelectorAll("[data-t]").forEach(function (el) { if (t[el.dataset.t] != null) el.textContent = t[el.dataset.t]; });
+    document.querySelectorAll("[data-alt]").forEach(function (el) { if (t[el.dataset.alt] != null) el.alt = t[el.dataset.alt]; });
+    document.querySelectorAll("[data-aria]").forEach(function (el) { if (t[el.dataset.aria] != null) el.setAttribute("aria-label", t[el.dataset.aria]); });
+    document.getElementById("btn-es").setAttribute("aria-pressed", st.lang === "es" ? "true" : "false");
+    document.getElementById("btn-en").setAttribute("aria-pressed", st.lang === "en" ? "true" : "false");
+    chips("need"); chips("place"); chips("when");
+    var need = frase(OPT.need, st.need), place = frase(OPT.place, st.place), when = frase(OPT.when, st.when);
+    var msg = st.lang === "es"
+      ? "Hola Nicholas, me interesa " + need + " para " + place + ", " + when + ". ¿Podemos platicar?"
+      : "Hi Nicholas, I'm interested in " + need + " for " + place + ", " + when + ". Can we talk?";
+    document.getElementById("mensaje").textContent = msg;
+    document.getElementById("enviar").href = "https://wa.me/526241549686?text=" + encodeURIComponent(msg);
+  }
+
+  function idioma(l) { st.lang = l; try { localStorage.setItem("cadico-idioma", l); } catch (e) {} pintar(); }
+  document.getElementById("btn-es").addEventListener("click", function () { idioma("es"); });
+  document.getElementById("btn-en").addEventListener("click", function () { idioma("en"); });
+
+  var wipe = document.getElementById("wipe");
+  var rango = document.getElementById("comparador");
+  function cortar() { wipe.style.setProperty("--cut", rango.value + "%"); }
+  rango.addEventListener("input", cortar);
+  cortar();
+  pintar();
+})();
+</script>
+</body>
+</html>

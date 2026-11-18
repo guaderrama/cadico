@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" fill="none" stroke="#3B2A1F" stroke-linecap="round" stroke-linejoin="round">
+<g stroke-opacity="0.16" stroke-width="1">
+<path d="M200 92v16M192 100h16M600 92v16M592 100h16M1000 92v16M992 100h16M1400 92v16M1392 100h16M200 892v16M192 900h16M600 892v16M592 900h16M1000 892v16M992 900h16"/>
+</g>
+<g stroke-opacity="0.1" stroke-width="1">
+<path d="M20 760H1580M20 240H1580M40 120H900M20 330H860"/>
+<path d="M680 140V830" stroke-dasharray="24 6 4 6"/>
+<path d="M250 60V800" stroke-dasharray="24 6 4 6"/>
+</g>
+<g stroke-opacity="0.22" stroke-width="1.4">
+<path d="M80 120H420V760H80Z"/>
+<path d="M80 280H420M165 120V760M250 120V760M335 120V760"/>
+<path d="M250 520H335M250 580H335M250 640H335M250 700H335M80 745H420"/>
+<path d="M158 200v36M172 200v36M328 200v36M342 200v36M158 400v44M172 400v44M328 400v44M342 400v44"/>
+<path d="M281 548h22M281 608h22M281 668h22M281 726h22"/>
+</g>
+<g stroke-opacity="0.1" stroke-width="1">
+<path d="M66 118.5H434M78 106V774M422 106V774M66 761.5H434"/>
+<path d="M92 300L150 360M92 330L150 390M92 360L150 420M92 390L150 450"/>
+</g>
+<g stroke-opacity="0.16" stroke-width="1">
+<path d="M80 86H420M80 76v20M165 80v12M250 80v12M335 80v12M420 76v20"/>
+<path d="M74 92l12-12M159 92l12-12M244 92l12-12M329 92l12-12M414 92l12-12"/>
+<path d="M46 120V760M38 120h16M38 760h16M40 126l12-12M40 766l12-12M46 280h-8"/>
+</g>
+<g stroke-opacity="0.22" stroke-width="1.4">
+<path d="M560 760V330A120 120 0 0 1 800 330V760"/>
+<path d="M574 760V330A106 106 0 0 1 786 330V760"/>
+<path d="M600 470V340A80 80 0 0 1 760 340V470Z"/>
+<path d="M600 510H760V720H600Z"/>
+<path d="M770 500v28"/>
+</g>
+<g stroke-opacity="0.12" stroke-width="1">
+<path d="M612 462V342A68 68 0 0 1 748 342V462ZM612 522H748V708H612Z"/>
+<path d="M545 330A135 135 0 0 1 815 330" stroke-dasharray="3 7"/>
+<path d="M672 330h16M680 322v16M680 330L765 245"/>
+<circle cx="770" cy="514" r="40" stroke-dasharray="5 6"/>
+<path d="M800 514L860 470H930"/>
+</g>
+<g stroke-opacity="0.16" stroke-width="1">
+<path d="M560 180H800M560 172v16M800 172v16M554 186l12-12M794 186l12-12M560 200V320M800 200V320"/>
+<path d="M840 210V760M832 210h16M832 760h16M834 216l12-12M834 766l12-12M804 210H846"/>
+</g>
+<g stroke-opacity="0.2" stroke-width="1.4">
+<path d="M920 760V695H960V630H1000V565H1040V500H1080V435H1120V370H1160V305H1200V240H1240"/>
+<path d="M968 760L1240 318"/>
+<path d="M940 650L1250 146M940 650V745M1250 146V240M1095 398V485"/>
+</g>
+<g stroke-opacity="0.1" stroke-width="1">
+<path d="M960 703H1000M1000 638H1040M1040 573H1080M1080 508H1120M1120 443H1160M1160 378H1200M1200 313H1240"/>
+<path d="M980 760A60 60 0 0 0 951.8 709.1"/>
+<path d="M1290 240V760M1282 240h16M1282 305h16M1282 370h16M1282 435h16M1282 500h16M1282 565h16M1282 630h16M1282 695h16M1282 760h16"/>
+<path d="M480 620L520 580M480 650L520 610M480 680L520 640M480 710L520 670M480 740L520 700M480 580H520V760H480Z"/>
+</g>
+<g stroke-opacity="0.16" stroke-width="1">
+<circle cx="1450" cy="560" r="34"/>
+<path d="M1416 560H1484M1450 526V470M1450 594V650M1340 560H1410"/>
+<path d="M1500 330H1560V420H1500ZM1500 345H1560M1515 330V420" stroke-opacity="0.6"/>
+</g>
+<g stroke-opacity="0.2" stroke-width="1.2">
+<path d="M1260 820H1560V960H1260ZM1260 860H1560M1400 860V960M1260 910H1400M1480 860V960"/>
+</g>
+<g fill="#3B2A1F" fill-opacity="0.26" stroke="none" font-family="ui-monospace, Menlo, monospace" letter-spacing="2">
+<text x="1274" y="847" font-size="15">CADICO · CARPINTERÍA</text>
+<text x="1274" y="890" font-size="12">LOS CABOS, B.C.S.</text>
+<text x="1274" y="940" font-size="12">DIBUJO · N.C.</text>
+<text x="1412" y="900" font-size="12">ESC 1:20</text>
+<text x="1494" y="920" font-size="22">01</text>
+</g>
+</svg>

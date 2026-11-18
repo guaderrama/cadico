@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 405 540" width="405" height="540" fill="none" stroke="#3B2A1F" stroke-linecap="round" stroke-linejoin="round">
+<g stroke-opacity="0.3" stroke-width="0.9">
+<path d="M0 524L130 512M309 490L405 478"/>
+<path d="M98 35.5L341 61.6M111.5 22L131 548M328 46L308.4 512"/>
+</g>
+<g stroke-width="1.7" stroke-opacity="0.9">
+<path d="M112 37L327 60L309 497M112 37L130 532"/>
+</g>
+<g stroke-width="1.1" stroke-opacity="0.75">
+<path d="M142 56L305 74L293 492M142 56L154 522"/>
+<path d="M155 76L290 88L286 480L162 506Z"/>
+<path d="M273 87L270 479"/>
+</g>
+<g stroke-width="1" stroke-opacity="0.7">
+<path d="M157.4 105L272 109.9M158 139L272 142.8M158.5 173L272 175.8M159.1 207L272 208.8M159.6 238L272 238.9M160.1 268L271.6 268M160.6 297L271.4 296.1M161.1 323L271.2 321.3M161.6 353L271 350.4M162.1 386L270.8 382.4M162.7 418L270.6 413.5M163.2 452L270.4 446.4"/>
+</g>
+<g stroke-width="0.7" stroke-opacity="0.28">
+<path d="M170 122C200 118 230 126 262 121M168 156C204 160 236 152 264 157M172 222C196 219 228 226 258 222M170 283C206 286 238 279 262 284M174 337C200 334 232 340 262 336M172 400C206 403 236 396 262 400M176 434C202 431 236 437 262 432"/>
+</g>
+<g stroke-width="0.9" stroke-opacity="0.45">
+<path d="M114 88L144 74M115 128L146 114M117 168L148 154M118 208L149 194M119 248L150 234M121 288L151 274M122 328L152 314M124 368L154 354M125 408L155 394M127 448L156 434M128 488L157 474"/>
+<path d="M318 80L302 96M317 120L301 136M316 160L300 176M315 200L299 216M314 240L298 256M313 280L297 296M312 320L296 336M311 360L295 376M310 400L294 416M309 440L293 456"/>
+</g>
+<g stroke-width="1.3" stroke-opacity="0.9">
+<circle cx="281" cy="322" r="4"/>
+<path d="M281 320L261 322L261 326L281 325"/>
+</g>
+<circle cx="279" cy="323" r="24" stroke-width="0.9" stroke-opacity="0.45" stroke-dasharray="4 5"/>
+<g stroke-width="0.9" stroke-opacity="0.6">
+<path d="M26 75V505M19 82L33 68M19 512L33 498"/>
+<path d="M155 20H290M148 27L162 13M283 27L297 13"/>
+</g>
+<g stroke-width="0.7" stroke-opacity="0.3">
+<path d="M150 75H18M156 505H18M155 70V12M290 82V12"/>
+</g>
+<g stroke-width="1" stroke-opacity="0.7">
+<path d="M98 96Q114 98 126 110"/>
+<circle cx="128" cy="112" r="2.2" fill="#3B2A1F" fill-opacity="0.7"/>
+<path d="M118 238Q158 238 192 254"/>
+<circle cx="194" cy="255" r="2.2" fill="#3B2A1F" fill-opacity="0.7"/>
+<path d="M322 312Q302 314 290 320"/>
+<circle cx="287" cy="321" r="2.2" fill="#3B2A1F" fill-opacity="0.7"/>
+</g>
+</svg>
