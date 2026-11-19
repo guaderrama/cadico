@@ -3,12 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F2EEE8">
 <meta name="description" content="CADICO, taller de carpintería de Nicholas Carter en Los Cabos: puertas, closets, cocinas y muebles a medida.">
 <meta property="og:title" content="CADICO · Taller de carpintería en Los Cabos">
 <meta property="og:description" content="Puertas, closets, cocinas y muebles a medida, dibujados, construidos e instalados por Nicholas Carter.">
-<meta property="og:image" content="https://guaderrama.github.io/cadico/img/vista-previa.jpg">
+<meta property="og:image" content="https://guaderrama.github.io/cadico/img/compartir.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CADICO, taller de carpintería en Los Cabos">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://guaderrama.github.io/cadico/">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://guaderrama.github.io/cadico/img/compartir.jpg">
 <link rel="icon" href="img/logo.png">
 <title>CADICO Carpintería</title>
 <meta name="robots" content="noindex">
@@ -47,6 +53,7 @@ h1,h2,h3{text-wrap:balance}
 .btn-oscuro{background:var(--espresso);color:var(--on-dark)}.btn-oscuro:hover{color:var(--accent-light)}
 .btn-borde{border-color:var(--ink);color:var(--ink)}
 .btn-claro{background:var(--accent-light);color:var(--ink);min-height:58px;font-size:17px;font-weight:600}.btn-claro:hover{color:var(--ink);background:#EBD2B3}
+.oscuro a.btn-claro,.oscuro a.btn-claro:hover{color:var(--ink)}
 .nota{font-family:var(--hand);color:var(--accent)}
 
 /* Encabezado */
@@ -203,11 +210,112 @@ legend span{color:var(--accent-light)}
 .pie-cols a{padding:6px 0;font-size:16px}
 .pie-cols .lista{display:flex;flex-direction:column;gap:4px}
 .gigante{height:clamp(64px, 13.4vw, 196px);overflow:hidden;text-align:center;font-size:clamp(96px, 21.5vw, 314px);line-height:.8;font-weight:500;letter-spacing:-.055em;color:var(--pale-word);margin-top:28px}
+
+/* Movimiento: letras de la portada y entrada de secciones */
+.palabra .l{display:inline-block;animation:letra 1s cubic-bezier(.2,.75,.2,1) both}
+.palabra .l:nth-child(2){animation-delay:.05s}.palabra .l:nth-child(3){animation-delay:.1s}.palabra .l:nth-child(4){animation-delay:.15s}.palabra .l:nth-child(5){animation-delay:.2s}.palabra .l:nth-child(6){animation-delay:.25s}
+@keyframes letra{from{opacity:0;transform:translateY(.32em)}to{opacity:1;transform:none}}
+.js .rv{opacity:0;transform:translateY(32px);transition:opacity .9s ease, transform 1s cubic-bezier(.2,.7,.2,1)}
+.js .rv.visto{opacity:1;transform:none}
+.ig .rv:nth-child(2n){transition-delay:.08s}
+.pasos .rv:nth-child(2){transition-delay:.06s}.pasos .rv:nth-child(3){transition-delay:.12s}.pasos .rv:nth-child(4){transition-delay:.18s}
+
+/* Piezas solo de celular: ocultas en pantallas grandes */
+.btn-menu,.menu-movil,.barra-cta,.carril{display:none}
+.obras{display:flex;flex-direction:column;gap:44px}
+
+@media (max-width:700px){
+  html{scroll-padding-top:76px}
+  body{font-size:16px}
+  /* Encabezado fijo en una sola línea */
+  .barra{position:sticky;top:0;z-index:40;background:rgba(242,238,232,.88);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid transparent;transition:border-color .3s ease}
+  .barra.con-linea{border-bottom-color:var(--line)}
+  .top{flex-wrap:nowrap;gap:10px;padding-block:10px}
+  .marca img{width:38px;height:38px}
+  .marca span{font-size:20px}
+  .acciones{gap:8px}
+  .acciones .btn{display:none}
+  .idioma button{min-width:40px;min-height:36px}
+  .btn-menu{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:var(--espresso);color:var(--on-dark);cursor:pointer}
+
+  /* Menú a pantalla completa */
+  .menu-movil{display:flex;position:fixed;inset:0;z-index:60;flex-direction:column;gap:28px;overflow-y:auto;padding:10px var(--gutter) calc(26px + env(safe-area-inset-bottom, 0px));background:var(--espresso) url(dib/plano-crema.svg) no-repeat left -460px bottom -200px / 1100px auto;color:var(--on-dark);opacity:0;visibility:hidden;transition:opacity .35s ease, visibility 0s linear .35s}
+  .menu-movil.abierto{opacity:1;visibility:visible;transition:opacity .35s ease}
+  .mm-top{display:flex;align-items:center;justify-content:space-between}
+  .mm-top .marca{color:var(--on-dark)}
+  .mm-top .marca img{mix-blend-mode:screen;filter:invert(1)}
+  .menu-movil .cerrar{background:var(--bg);color:var(--ink)}
+  .menu-movil nav{display:flex;flex-direction:column;margin-top:auto}
+  .menu-movil nav a{display:flex;align-items:baseline;gap:14px;padding:10px 0;border-bottom:1px solid rgba(242,238,232,.16);font-family:var(--serif);font-size:44px;line-height:1.1;font-weight:500;text-decoration:none;color:var(--on-dark);opacity:0;transform:translateY(18px);transition:opacity .5s ease, transform .6s cubic-bezier(.2,.7,.2,1)}
+  .menu-movil nav a .mm-n{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--accent-light)}
+  .menu-movil.abierto nav a{opacity:1;transform:none}
+  .menu-movil.abierto nav a:nth-child(2){transition-delay:.05s}.menu-movil.abierto nav a:nth-child(3){transition-delay:.1s}.menu-movil.abierto nav a:nth-child(4){transition-delay:.15s}.menu-movil.abierto nav a:nth-child(5){transition-delay:.2s}
+  .mm-pie{display:flex;flex-direction:column;gap:16px}
+  .mm-pie p{margin:0;display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--on-dark-3)}
+  .mm-pie p a{color:var(--on-dark-2)}
+
+  /* Portada: palabra de lado a lado y el banco encima */
+  .hero{background-size:980px auto;background-position:left -380px top 40px}
+  .hero .wrap{display:flex;flex-direction:column;min-height:calc(100svh - 64px);padding-block:22px 64px}
+  .sub{order:0;margin:0 0 10px;text-align:center;font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+  .palabra{order:1;font-size:33.5vw;line-height:.86}
+  .banco-hero{order:2;width:76%;margin:-9vw auto 76px}
+  .hero-fila{order:3;margin-top:0;gap:26px}
+  .hero-texto,.tarjetas{flex:1 1 100%}
+  .hero-texto p{font-size:17px}
+
+  /* Títulos de sección: el número arriba, como etiqueta */
+  .sec{padding-top:92px}
+  .head-row:has(> .num),.head-row:has(> div > .num){flex-direction:column-reverse;align-items:flex-start;gap:14px}
+  .head-row > div:has(> .num){flex-direction:row !important;align-items:center !important;justify-content:space-between;width:100%}
+  .num{font-size:14px;color:var(--accent);letter-spacing:.04em}
+  .h2-duo{font-size:40px;line-height:1.04}
+
+  /* Carruseles que se deslizan con el dedo */
+  .indice,.obras{display:flex !important;flex-direction:row !important;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;margin-inline:calc(-1 * var(--gutter));padding:4px var(--gutter) 8px;scroll-padding-inline:var(--gutter);scrollbar-width:none;border-top:0}
+  .indice::-webkit-scrollbar,.obras::-webkit-scrollbar{display:none}
+  .indice::after,.obras::after{content:"";flex:0 0 1px}
+  .indice li{flex:0 0 78%;scroll-snap-align:start;flex-direction:column;align-items:stretch;gap:8px;padding:0;border:0}
+  .indice .mini,.indice .mini-fondo{order:-1;width:100%;height:auto;aspect-ratio:4/5;border-radius:24px;margin-bottom:8px}
+  .indice .mini-fondo img{width:88%;height:80%}
+  .indice .n,.indice h3,.indice p{flex:none}
+  .indice .n{font-size:13px}
+  .indice h3{font-size:34px}
+  .indice p{font-size:15px}
+  .obras > .dos,.obras > .rejilla,.obras > .dos > div{display:contents !important}
+  .obras .obra{flex:0 0 84% !important;scroll-snap-align:start;position:relative;gap:0}
+  .obras .obra img{aspect-ratio:4/5 !important;border-radius:24px !important}
+  .obras .obra-pie{position:absolute;left:0;right:0;bottom:0;align-items:flex-end;padding:90px 18px 18px;border-radius:0 0 24px 24px;background:linear-gradient(rgba(33,26,21,0), rgba(33,26,21,.86));color:var(--on-dark)}
+  .obras .obra h3,.obras .obra .grande{font-size:28px;color:var(--on-dark)}
+  .obras .obra p{color:var(--on-dark-2)}
+  .obras .tag{border-color:rgba(242,238,232,.5);color:var(--on-dark)}
+  .carril{display:block;height:2px;margin-top:-26px;border-radius:2px;background:var(--line);overflow:hidden}
+  .carril span{display:block;width:20%;height:100%;background:var(--accent);transition:width .2s ease}
+
+  /* Otras secciones */
+  .panel-foto{min-height:440px}
+  .muestras{gap:10px}
+
+  /* Botón fijo para cotizar */
+  .barra-cta{display:flex;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom, 0px));z-index:45;gap:8px;transform:translateY(160%);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .barra-cta.ver{transform:none}
+  .barra-cta .btn{flex:1 1 auto;min-height:56px;padding:0 20px;background:var(--espresso);color:var(--on-dark);box-shadow:0 14px 34px rgba(42,32,26,.38)}
+  .barra-cta .wa{flex:0 0 56px;height:56px;border-radius:50%;background:var(--accent-light);color:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px rgba(42,32,26,.3)}
+  .pie{padding-bottom:84px}
+}
+@media (max-width:700px) and (prefers-reduced-motion:no-preference){
+  html{scroll-behavior:smooth}
+}
+@media (prefers-reduced-motion:reduce){
+  .palabra .l{animation:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .menu-movil,.menu-movil nav a,.barra-cta,.carril span{transition:none}
+}
 </style>
 </head>
 <body>
 
-<div class="wrap">
+<div class="wrap barra" id="barra">
 <header class="top">
 <a class="marca" href="#inicio"><img src="img/logo.png" alt=""><span>cadico</span></a>
 <nav class="menu" data-aria="navLabel" aria-label="Navegación principal">
@@ -223,13 +331,32 @@ legend span{color:var(--accent-light)}
 <button type="button" id="btn-en" aria-pressed="false" aria-label="English">EN</button>
 </div>
 <a class="btn btn-oscuro" href="https://wa.me/526241549686" target="_blank" rel="noopener"><span data-t="ctaWa">Cotizar</span> <span aria-hidden="true">→</span></a>
+<button type="button" class="btn-menu" id="btn-menu" aria-expanded="false" aria-controls="menu-movil" data-aria="menuAbrir" aria-label="Abrir menú"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16M4 15h16"/></svg></button>
 </div>
 </header>
 </div>
 
+<div class="menu-movil" id="menu-movil" role="dialog" aria-modal="true" data-aria="menuLabel" aria-label="Menú">
+<div class="mm-top">
+<span class="marca"><img src="img/logo.png" alt=""><span>cadico</span></span>
+<button type="button" class="btn-menu cerrar" id="btn-cerrar" data-aria="menuCerrar" aria-label="Cerrar menú"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>
+<nav data-aria="navLabel" aria-label="Navegación principal">
+<a href="#servicios"><span class="mm-n">01</span><span data-t="nav1">Servicios</span></a>
+<a href="#proyectos"><span class="mm-n">02</span><span data-t="nav2">Proyectos</span></a>
+<a href="#taller"><span class="mm-n">03</span><span data-t="nav3">Taller</span></a>
+<a href="#proceso"><span class="mm-n">04</span><span data-t="nav4">Proceso</span></a>
+<a href="#cotizar"><span class="mm-n">05</span><span data-t="nav6">Cotizar</span></a>
+</nav>
+<div class="mm-pie">
+<a class="btn btn-claro" href="https://wa.me/526241549686" target="_blank" rel="noopener"><span data-t="ctaWa2">Cotizar por WhatsApp</span> <span aria-hidden="true">→</span></a>
+<p><a href="https://www.instagram.com/cadico_mx/" target="_blank" rel="noopener">Instagram · @cadico_mx</a><span>Los Cabos, B.C.S.</span></p>
+</div>
+</div>
+
 <section id="inicio" class="hero">
 <div class="wrap">
-<h1 class="palabra">cadico</h1>
+<h1 class="palabra" aria-label="cadico"><span class="l" aria-hidden="true">c</span><span class="l" aria-hidden="true">a</span><span class="l" aria-hidden="true">d</span><span class="l" aria-hidden="true">i</span><span class="l" aria-hidden="true">c</span><span class="l" aria-hidden="true">o</span></h1>
 <p class="sub" data-t="heroSub">taller de carpintería · los cabos</p>
 <div class="banco-hero">
 <img src="img/banco-recorte.png" data-alt="bancoAlt" alt="Banco de madera con asiento curvo, hecho por CADICO">
@@ -274,13 +401,14 @@ legend span{color:var(--accent-light)}
 <h2 class="h2-duo"><span class="suave" data-t="servA">Cinco oficios,</span><br><span data-t="servB">un mismo taller.</span></h2>
 <span class="num" data-t="n02">02 / Servicios</span>
 </div>
-<ul class="indice">
+<ul class="indice" data-carril="serv">
 <li><span class="n">01</span><h3 data-t="s1">Puertas</h3><p data-t="s1p">De interior, de entrada y con arco. Lisas, de tablero o rústicas.</p><img class="mini foto" src="img/puerta-rustica.jpg" data-alt="s1Alt" alt="Puerta doble rústica con clavos y herrajes de hierro"></li>
 <li><span class="n">02</span><h3 data-t="s2">Closets y vestidores</h3><p data-t="s2p">De piso a techo, con cajoneras y entrepaños a la medida.</p><img class="mini foto" src="img/closet.jpg" data-alt="s2Alt" alt="Closet de piso a techo con chapa de madera rojiza"></li>
 <li><span class="n">03</span><h3 data-t="s3">Cocinas y barras</h3><p data-t="s3p">Gabinetes, barras y coperos para casas y restaurantes.</p><img class="mini foto" src="img/cocina.jpg" data-alt="s3Alt" alt="Cocina con gabinetes de madera clara" style="object-position: 70% center"></li>
 <li><span class="n">04</span><h3 data-t="s4">Muebles a medida</h3><p data-t="s4p">Mesas, bancos, escritorios y vitrinas, pieza por pieza.</p><span class="mini-fondo"><img src="img/vitrina-recorte.png" data-alt="s4Alt" alt="Vitrina de madera para joyería con la tapa abierta"></span></li>
 <li><span class="n">05</span><h3 data-t="s5">Exteriores</h3><p data-t="s5p">Pérgolas, terrazas, jardineras y escaleras hechas para el sol de Baja.</p><img class="mini foto" src="img/pergola-cochera.jpg" data-alt="s5Alt" alt="Pérgola de madera sobre una cochera"></li>
 </ul>
+<div class="carril" data-barra="serv" aria-hidden="true"><span></span></div>
 </div>
 </section>
 
@@ -327,6 +455,7 @@ legend span{color:var(--accent-light)}
 <a class="enlace" href="https://www.instagram.com/cadico_mx/" target="_blank" rel="noopener"><span data-t="verTodos">Ver todos en Instagram</span> ↗</a>
 </div>
 </div>
+<div class="obras" data-carril="obras">
 <div class="dos">
 <article class="obra" style="flex: 2 1 560px">
 <img class="redondo foto" src="img/terraza.jpg" data-alt="p1Alt" alt="Terraza con deck y jardineras de madera frente a los cerros" style="aspect-ratio: 5 / 4">
@@ -357,6 +486,8 @@ legend span{color:var(--accent-light)}
 <div class="obra-pie"><div><h3 data-t="p6">Sala de juntas con lambrín</h3><p data-t="p6d">Lambrín iluminado y mesa de madera</p></div><span class="tag" data-t="p6t">Corporativo</span></div>
 </article>
 </div>
+</div>
+<div class="carril" data-barra="obras" aria-hidden="true"><span></span></div>
 </div>
 </section>
 
@@ -467,6 +598,11 @@ legend span{color:var(--accent-light)}
 </div>
 </section>
 
+<div class="barra-cta" id="barra-cta">
+<a class="btn" href="#cotizar"><span data-t="heroB1">Cuéntanos tu proyecto</span> <span aria-hidden="true">→</span></a>
+<a class="wa" href="https://wa.me/526241549686" target="_blank" rel="noopener" data-aria="waLabel" aria-label="Escribir por WhatsApp"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.3 7.4L3.5 20.5l1.6-4.5A8.4 8.4 0 1 1 20.5 11.6Z"/><path d="M9.2 8.4c0 3.1 2.9 6.2 6.2 6.3l1-1.5-1.9-1-1 .8c-.9-.4-1.7-1.2-2.1-2.1l.8-1-1-1.9Z"/></svg></a>
+</div>
+
 <footer id="contacto" class="pie sec">
 <div class="wrap" style="display: flex; flex-direction: column; gap: 36px">
 <div class="pie-cols">
@@ -498,6 +634,7 @@ legend span{color:var(--accent-light)}
 (function () {
   var T = {
     es: {
+      menuAbrir: "Abrir menú", menuCerrar: "Cerrar menú", menuLabel: "Menú", nav6: "Cotizar", ctaWa2: "Cotizar por WhatsApp", waLabel: "Escribir por WhatsApp",
       navLabel: "Navegación principal", nav1: "Servicios", nav2: "Proyectos", nav3: "Taller", nav4: "Proceso", nav5: "Contacto",
       ctaWa: "Cotizar", heroSub: "taller de carpintería · los cabos",
       heroP: "Puertas, closets, cocinas y muebles a medida, dibujados, construidos e instalados por Nicholas Carter.",
@@ -550,6 +687,7 @@ legend span{color:var(--accent-light)}
       pieTag: "Carpintería, diseño y construcción. Hecho a mano en Los Cabos, B.C.S.", contacto: "Contacto", navPie: "Sitio", hecho: "Los Cabos, Baja California Sur"
     },
     en: {
+      menuAbrir: "Open menu", menuCerrar: "Close menu", menuLabel: "Menu", nav6: "Get a quote", ctaWa2: "Get a quote on WhatsApp", waLabel: "Message on WhatsApp",
       navLabel: "Main navigation", nav1: "Services", nav2: "Projects", nav3: "Workshop", nav4: "Process", nav5: "Contact",
       ctaWa: "Get a quote", heroSub: "woodworking studio · los cabos",
       heroP: "Custom doors, closets, kitchens and furniture, sketched, built and installed by Nicholas Carter.",
@@ -665,9 +803,84 @@ legend span{color:var(--accent-light)}
   var wipe = document.getElementById("wipe");
   var rango = document.getElementById("comparador");
   function cortar() { wipe.style.setProperty("--cut", rango.value + "%"); }
-  rango.addEventListener("input", cortar);
+  var tocado = false;
+  rango.addEventListener("input", function () { tocado = true; cortar(); });
   cortar();
   pintar();
+
+  var quieto = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var hayIO = "IntersectionObserver" in window;
+
+  // Menú de celular
+  var raiz = document.documentElement;
+  var menuBtn = document.getElementById("btn-menu"), menuMv = document.getElementById("menu-movil"), cerrarBtn = document.getElementById("btn-cerrar");
+  function menu(abrir, devolverFoco) {
+    menuMv.classList.toggle("abierto", abrir);
+    menuBtn.setAttribute("aria-expanded", abrir ? "true" : "false");
+    raiz.style.overflow = abrir ? "hidden" : "";
+    if (abrir) cerrarBtn.focus({ preventScroll: true });
+    else if (devolverFoco) menuBtn.focus({ preventScroll: true });
+    verCta();
+  }
+  menuBtn.addEventListener("click", function () { menu(true); });
+  cerrarBtn.addEventListener("click", function () { menu(false, true); });
+  menuMv.querySelectorAll("a[href^='#']").forEach(function (a) { a.addEventListener("click", function () { menu(false, false); }); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && menuMv.classList.contains("abierto")) menu(false, true); });
+
+  // Línea bajo el encabezado al bajar
+  var barra = document.getElementById("barra");
+  function linea() { barra.classList.toggle("con-linea", window.scrollY > 8); }
+  addEventListener("scroll", linea, { passive: true }); linea();
+
+  // Botón fijo: aparece después de la portada y se esconde en la sección de cotizar y el pie
+  var cta = document.getElementById("barra-cta"), vis = { inicio: true, cotizar: false, contacto: false };
+  function verCta() {
+    var ver = !vis.inicio && !vis.cotizar && !vis.contacto && !menuMv.classList.contains("abierto");
+    cta.classList.toggle("ver", ver);
+    cta.inert = !ver;
+  }
+  if (hayIO) {
+    var ioCta = new IntersectionObserver(function (es) { es.forEach(function (e) { vis[e.target.id] = e.isIntersecting; }); verCta(); });
+    ["inicio", "cotizar", "contacto"].forEach(function (id) { ioCta.observe(document.getElementById(id)); });
+  }
+  verCta();
+
+  // Barras de avance de los carruseles
+  document.querySelectorAll("[data-carril]").forEach(function (c) {
+    var barraC = document.querySelector('[data-barra="' + c.dataset.carril + '"] span');
+    function avance() { if (c.scrollWidth > c.clientWidth) barraC.style.width = Math.min(100, (c.scrollLeft + c.clientWidth) / c.scrollWidth * 100) + "%"; }
+    c.addEventListener("scroll", avance, { passive: true });
+    addEventListener("resize", avance);
+    avance();
+  });
+
+  // Entrada suave de secciones
+  if (hayIO && !quieto) {
+    raiz.classList.add("js");
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("visto"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.06 });
+    document.querySelectorAll(".h2-duo, #nosotros .redondo, .indice, .obras, .serif-caps, .lamina, .wipe, .materia h2, .muestras, .panel, .pasos li, .ig img, .cotizador, .pie-cols").forEach(function (el) {
+      el.classList.add("rv"); io.observe(el);
+    });
+
+    // El comparador se mueve solo una vez para mostrar que se puede deslizar
+    var ioWipe = new IntersectionObserver(function (es) {
+      if (!es[0].isIntersecting) return;
+      ioWipe.disconnect();
+      var pasos = [[52, 82], [82, 22], [22, 52]], i = 0, t0 = null, dur = 900;
+      function cuadro(t) {
+        if (tocado) return;
+        if (t0 === null) t0 = t;
+        var k = Math.min(1, (t - t0) / dur), s = k < .5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        rango.value = Math.round(pasos[i][0] + (pasos[i][1] - pasos[i][0]) * s); cortar();
+        if (k < 1) requestAnimationFrame(cuadro);
+        else if (++i < pasos.length) { t0 = null; requestAnimationFrame(cuadro); }
+      }
+      setTimeout(function () { requestAnimationFrame(cuadro); }, 500);
+    }, { threshold: 0.5 });
+    ioWipe.observe(wipe);
+  }
 })();
 </script>
 </body>
